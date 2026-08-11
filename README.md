@@ -8,8 +8,6 @@ A full-stack movie ticket booking system developed as a CDAC PG-DAC academic pro
 - Spring Boot
 - Spring Security (JWT)
 - MySQL
-- ASP.NET Core (Payment Service)
-- Node.js (PDF Ticket Generation)
 - Git
 - Postman
 
