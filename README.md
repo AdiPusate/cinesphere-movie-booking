@@ -1,6 +1,6 @@
 # Cinesphere Backend
 
-Spring Boot 3.3 + Java 21 backend for the Cinesphere movie-ticket booking application.
+A full-stack movie ticket booking system developed as an academic project. It features a React frontend and a backend architecture powered by Spring Boot, secured via Spring Security and backed by MySQL.
 
 ## Stack
 
@@ -92,10 +92,10 @@ A customer can access only their own bookings/payments/receipts. Admins can acce
 
 Demo account seeding is enabled by default for local development.
 
-Default local credentials:
+Default local credentials (as defined in `application.properties`):
 
-- Admin: `catherine@tramell.com` / `password`
-- Customer: `nick@jensen.com` / `password`
+- Admin: `Admin@cinesphere.com` / `dummy_admin_password`
+- Customer: `user@cinesphere.com` / `dummy_user_password`
 
 Override them with environment variables or disable demo seeding:
 
@@ -105,9 +105,12 @@ app.seed-demo-users=false
 
 For anything beyond local development, use strong credentials and disable demo seeding.
 
-## Database
+## Database & Security Configuration
 
-Configure MySQL in `src/main/resources/application.properties`.
+Configure MySQL and JWT security in `src/main/resources/application.properties`. 
+**Note:** For security reasons, the current `application.properties` file uses dummy values for passwords and secret keys. You must replace them with your own secure credentials before running the application:
+- `spring.datasource.password`
+- `application.security.jwt.secret-key`
 
 The project uses:
 
@@ -164,6 +167,4 @@ The backend is aligned with the Cinesphere React frontend API base:
 It specifically provides `/users/me`, which is required by the frontend authentication and booking flow.
 
 
-## Deep audit
 
-See `DEEP_AUDIT.md` for the latest full re-audit, fixed defects, and remaining integration/domain considerations.
